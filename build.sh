@@ -1,2 +1,2 @@
 #!/bin/sh
-gcc -o heist main.c
+gcc -o heist main.c gets.h

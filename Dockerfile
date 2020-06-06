@@ -7,9 +7,9 @@ COPY . .
 RUN chmod +x ./build.sh
 RUN ./build.sh
 
-FROM alpine/socat
+FROM hackdalton/alpine-airport:1.0.0
 
 COPY --from=build /src/heist ./
 COPY ./flag.txt ./
 
-CMD socat TCP-LISTEN:8080,reuseaddr,fork EXEC:"./heist"
+CMD airport "./heist"
